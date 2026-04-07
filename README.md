@@ -1,2 +1,2 @@
-# Informatica de mrd
+# Informatica de diosito
 puta escuela
