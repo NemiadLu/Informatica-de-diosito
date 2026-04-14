@@ -11,6 +11,7 @@
 int POVIS;
 float temp;
 int luz;
+// Para las resistencias comunes, utiliza 220 Ohm, no KOhm
 void setup()
 {
   pinMode(cangrejo, INPUT);
@@ -22,7 +23,6 @@ void setup()
   Serial.begin(9600);
 }
 void loop() {
-  // Lectura del pin CANGREJO
   POVIS = analogRead(cangrejo);
 
   #ifdef MOSTRAR
@@ -39,8 +39,13 @@ void loop() {
   #endif
   luz = (analogRead(LDR));
   //valores; map(Value, MinOG, MaxOG, MinNew, MaxNew);
-  luz = map(luz, 1, 310, 100, 0);
-  analogWrite(LED_R, luz);
+  //luz = map(luz, 1, 310, 100, 0);
+  int brillo = map(luz, 0, 1023, 255, 0); 
+  
+  analogWrite(LED_R, brillo);
+  analogWrite(LED_G, brillo);
+  analogWrite(LED_B, brillo);
+
   #ifdef MOSTRARLUZ
   Serial.print("Luz:");
   Serial.println(luz);
