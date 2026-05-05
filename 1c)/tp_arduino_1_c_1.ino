@@ -1,41 +1,46 @@
-// C++ code
-//
 void setup()
 {
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
+  for (int pin = 2; pin <= 11; pin++)
+  {
+    pinMode(pin, OUTPUT);
+  }
 }
 
 void loop()
 {
-  digitalWrite(11, true);
-  digitalWrite(9, true);
-  digitalWrite(7, true);
-  digitalWrite(5, true);
-  digitalWrite(3, true);
+  cambiarLeds(HIGH);
   delay(1000);
-  digitalWrite(11, false);
-  digitalWrite(9, false);
-  digitalWrite(7, false);
-  digitalWrite(5, false);
-  digitalWrite(3, false);
-  digitalWrite(10, true);
-  digitalWrite(8, true);
-  digitalWrite(6, true);
-  digitalWrite(4, true);
-  digitalWrite(2, true);
-  delay(1000); 
-  digitalWrite(10, false);
-  digitalWrite(8, false);
-  digitalWrite(6, false);
-  digitalWrite(4, false);
-  digitalWrite(2, false); 
+  cambiarLeds(LOW);
+}
+
+void cambiarLeds(int estado)
+{
+  if (estado == HIGH)
+  {
+    digitalWrite(11, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(3, HIGH);
+    
+    digitalWrite(10, LOW);
+    digitalWrite(8, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(2, LOW);
+  }
+  else
+  {
+    digitalWrite(11, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(3, LOW);
+    
+    digitalWrite(10, HIGH);
+    digitalWrite(8, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(2, HIGH);
+  }
 }
