@@ -1,20 +1,18 @@
-void setup()
-{
-  pinMode(A0, INPUT);
-  pinMode(A1, OUTPUT);
+const int PIN_ENTRADA = A0;
+const int PIN_SALIDA  = A1;
+
+void setup() {
+  pinMode(PIN_ENTRADA, INPUT);
+  pinMode(PIN_SALIDA, OUTPUT);
 }
 
-void loop()
-{ 
-  if (digitalRead(A0)==HIGH)
-  { 
-    digitalWrite(A1, HIGH);
-   	delay(500);
-   	digitalWrite(A1, LOW);
+void loop() {
+  if (digitalRead(PIN_ENTRADA) == HIGH) {
+    digitalWrite(PIN_SALIDA, HIGH);
     delay(500);
-  }
-  else
-  {
-   	digitalWrite(A1, LOW);  
+    digitalWrite(PIN_SALIDA, LOW);
+    delay(500);
+  } else {
+    digitalWrite(PIN_SALIDA, LOW);
   }
 }

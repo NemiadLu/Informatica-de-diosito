@@ -1,90 +1,116 @@
-void setup()
-{
-  pinMode(0, OUTPUT);
-  pinMode(1, OUTPUT);
-  pinMode(2, OUTPUT);
+int ledA1 = 0;
+int ledA2 = 1;
+int ledA3 = 2;
+
+int ledB1 = 4;
+int ledB2 = 5;
+int ledB3 = 6;
+
+void setup() {
+  pinMode(ledA1, OUTPUT);
+  pinMode(ledA2, OUTPUT);
+  pinMode(ledA3, OUTPUT);
   
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
+  pinMode(ledB1, OUTPUT);
+  pinMode(ledB2, OUTPUT);
+  pinMode(ledB3, OUTPUT);
 }
 
-void loop()
-{
-  digitalWrite(0, true);
+void loop() {
+  secuenciaGrupoA();
+  secuenciaGrupoB();
+}
+
+void secuenciaGrupoA() {
+  digitalWrite(ledA1, HIGH);
   delay(500);
-  digitalWrite(0, false);
+  digitalWrite(ledA1, LOW);
   delay(500);
-  digitalWrite(1, true);
-  digitalWrite(2, true);
+
+  digitalWrite(ledA2, HIGH);
+  digitalWrite(ledA3, HIGH);
   delay(500);
-  digitalWrite(1, false);
-  digitalWrite(2, false);
+  digitalWrite(ledA2, LOW);
+  digitalWrite(ledA3, LOW);
   delay(500);
-  digitalWrite(2, true);
+
+  digitalWrite(ledA3, HIGH);
   delay(500);
-  digitalWrite(2, false);
+  digitalWrite(ledA3, LOW);
   delay(500);
-  digitalWrite(1, true);
-  digitalWrite(0, true);
+
+  digitalWrite(ledA2, HIGH);
+  digitalWrite(ledA1, HIGH);
   delay(500);
-  digitalWrite(1, false);
-  digitalWrite(0, false);
+  digitalWrite(ledA2, LOW);
+  digitalWrite(ledA1, LOW);
   delay(500);
-  digitalWrite(1, true);
+
+  digitalWrite(ledA2, HIGH);
   delay(500);
-  digitalWrite(1, false);
+  digitalWrite(ledA2, LOW);
   delay(500);
-  digitalWrite(0, true);
-  digitalWrite(1, true);
-  digitalWrite(2, true);
+
+  digitalWrite(ledA1, HIGH);
+  digitalWrite(ledA2, HIGH);
+  digitalWrite(ledA3, HIGH);
   delay(500);
-  digitalWrite(0, false);
-  digitalWrite(1, false);
-  digitalWrite(2, false);
+  digitalWrite(ledA1, LOW);
+  digitalWrite(ledA2, LOW);
+  digitalWrite(ledA3, LOW);
   delay(500);
-  digitalWrite(0, true);
-  digitalWrite(2, true);
+
+  digitalWrite(ledA1, HIGH);
+  digitalWrite(ledA3, HIGH);
   delay(500);
-  digitalWrite(0, false);
-  digitalWrite(2, false);
+  digitalWrite(ledA1, LOW);
+  digitalWrite(ledA3, LOW);
   delay(500);
-  digitalWrite(4, true);
+}
+
+void secuenciaGrupoB() {
+  digitalWrite(ledB1, HIGH);
   delay(500);
-  digitalWrite(4, false);
+  digitalWrite(ledB1, LOW);
   delay(500);
-  digitalWrite(5, true);
-  digitalWrite(6, true);
+
+  digitalWrite(ledB2, HIGH);
+  digitalWrite(ledB3, HIGH);
   delay(500);
-  digitalWrite(5, false);
-  digitalWrite(6, false);
+  digitalWrite(ledB2, LOW);
+  digitalWrite(ledB3, LOW);
   delay(500);
-  digitalWrite(6, true);
+
+  digitalWrite(ledB3, HIGH);
   delay(500);
-  digitalWrite(6, false);
+  digitalWrite(ledB3, LOW);
   delay(500);
-  digitalWrite(5, true);
-  digitalWrite(4, true);
+
+  digitalWrite(ledB2, HIGH);
+  digitalWrite(ledB1, HIGH);
   delay(500);
-  digitalWrite(5, false);
-  digitalWrite(4, false);
+  digitalWrite(ledB2, LOW);
+  digitalWrite(ledB1, LOW);
   delay(500);
-  digitalWrite(5, true);
+
+  digitalWrite(ledB2, HIGH);
   delay(500);
-  digitalWrite(5, false);
+  digitalWrite(ledB2, LOW);
   delay(500);
-  digitalWrite(4, true);
-  digitalWrite(5, true);
-  digitalWrite(6, true);
+
+  digitalWrite(ledB1, HIGH);
+  digitalWrite(ledB2, HIGH);
+  digitalWrite(ledB3, HIGH);
   delay(500);
-  digitalWrite(4, false);
-  digitalWrite(5, false);
-  digitalWrite(6, false);
+  digitalWrite(ledB1, LOW);
+  digitalWrite(ledB2, LOW);
+  digitalWrite(ledB3, LOW);
   delay(500);
-  digitalWrite(4, true);
-  digitalWrite(6, true);
+
+  digitalWrite(ledB1, HIGH);
+  digitalWrite(ledB3, HIGH);
   delay(500);
-  digitalWrite(4, false);
-  digitalWrite(6, false);
+  digitalWrite(ledB1, LOW);
+  digitalWrite(ledB3, LOW);
   delay(500);
 }

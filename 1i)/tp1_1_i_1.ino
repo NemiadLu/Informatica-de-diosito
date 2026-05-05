@@ -2,57 +2,70 @@ int buttonState = LOW;
 int ultimoEstadoBoton = HIGH;
 bool encendido = false;      
 
+#define PIN_BOTON 4
+#define LED1 2
+#define LED2 3
+#define LED3 5
+#define LED4 6
+#define LED5 7
+#define LED6 8
+#define LED7 9
+#define LED8 10
+#define LED9 11
+#define LED10 12
+#define TIEMPO_PASO 100
+#define TIEMPO_REBOTE 200
+
+int buttonState = 0;
+int ultimoEstadoBoton = HIGH;
+bool encendido = false;
+
 void setup() {
-  pinMode(4, INPUT); 
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
+ 
+  pinMode(PIN_BOTON, INPUT); 
+  pinMode(LED1, OUTPUT);
+  pinMode(LED2, OUTPUT);
+  pinMode(LED3, OUTPUT);
+  pinMode(LED4, OUTPUT);
+  pinMode(LED5, OUTPUT);
+  pinMode(LED6, OUTPUT);
+  pinMode(LED7, OUTPUT);
+  pinMode(LED8, OUTPUT);
+  pinMode(LED9, OUTPUT);
+  pinMode(LED10, OUTPUT);
 }
 
-void loop() 
-{
-  buttonState = digitalRead(4);
-
-  
-  if (buttonState == LOW && ultimoEstadoBoton == HIGH) 
-  {
+void loop() {
+  buttonState = digitalRead(PIN_BOTON);
+  if (buttonState == LOW && ultimoEstadoBoton == HIGH) {
     encendido = !encendido; 
-    delay(200);            
+    delay(TIEMPO_REBOTE);
   }
   
   ultimoEstadoBoton = buttonState;
 
-  if (encendido == true) 
-  {
-    digitalWrite(2, HIGH); delay(100); digitalWrite(2, LOW);
-    digitalWrite(3, HIGH); delay(100); digitalWrite(3, LOW);
-    digitalWrite(5, HIGH); delay(100); digitalWrite(5, LOW);
-    digitalWrite(6, HIGH); delay(100); digitalWrite(6, LOW);
-    digitalWrite(7, HIGH); delay(100); digitalWrite(7, LOW);
-    digitalWrite(8, HIGH); delay(100); digitalWrite(8, LOW);
-    digitalWrite(9, HIGH); delay(100); digitalWrite(9, LOW);
-    digitalWrite(10, HIGH); delay(100); digitalWrite(10, LOW);
-    digitalWrite(11, HIGH); delay(100); digitalWrite(11, LOW);
-    digitalWrite(12, HIGH); delay(100); digitalWrite(12, LOW);
+  if (encendido) {
+    digitalWrite(LED1, HIGH); delay(TIEMPO_PASO); digitalWrite(LED1, LOW);
+    digitalWrite(LED2, HIGH); delay(TIEMPO_PASO); digitalWrite(LED2, LOW);
+    digitalWrite(LED3, HIGH); delay(TIEMPO_PASO); digitalWrite(LED3, LOW);
+    digitalWrite(LED4, HIGH); delay(TIEMPO_PASO); digitalWrite(LED4, LOW);
+    digitalWrite(LED5, HIGH); delay(TIEMPO_PASO); digitalWrite(LED5, LOW);
+    digitalWrite(LED6, HIGH); delay(TIEMPO_PASO); digitalWrite(LED6, LOW);
+    digitalWrite(LED7, HIGH); delay(TIEMPO_PASO); digitalWrite(LED7, LOW);
+    digitalWrite(LED8, HIGH); delay(TIEMPO_PASO); digitalWrite(LED8, LOW);
+    digitalWrite(LED9, HIGH); delay(TIEMPO_PASO); digitalWrite(LED9, LOW);
+    digitalWrite(LED10, HIGH); delay(TIEMPO_PASO); digitalWrite(LED10, LOW);
   } 
-  else 
-  {
-    digitalWrite(2, LOW);
-    digitalWrite(3, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(6, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-    digitalWrite(11, LOW);
-    digitalWrite(12, LOW);
+  else {
+    digitalWrite(LED1, LOW);
+    digitalWrite(LED2, LOW);
+    digitalWrite(LED3, LOW);
+    digitalWrite(LED4, LOW);
+    digitalWrite(LED5, LOW);
+    digitalWrite(LED6, LOW);
+    digitalWrite(LED7, LOW);
+    digitalWrite(LED8, LOW);
+    digitalWrite(LED9, LOW);
+    digitalWrite(LED10, LOW);
   }
 }

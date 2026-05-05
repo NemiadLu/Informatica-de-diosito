@@ -1,30 +1,27 @@
-const int PIN_BUTTON = 4;
-const int PIN_LED1 = 2;
-const int PIN_LED2 = 3;
-const int PIN_LED3 = 5;
+const int PIN_BOTON = 4;
+const int PIN_LED1  = 2;
+const int PIN_LED2  = 3;
+const int PIN_LED3  = 5;
 
-int buttonState = 0;
-int lastButtonState = HIGH;
 int estado = 0;
+int ultimoEstadoBoton = HIGH;
 
 void setup() {
-  pinMode(PIN_BUTTON, INPUT_PULLUP);
+  pinMode(PIN_BOTON, INPUT_PULLUP);
   pinMode(PIN_LED1, OUTPUT);
   pinMode(PIN_LED2, OUTPUT);
   pinMode(PIN_LED3, OUTPUT);
 }
 
 void loop() {
-  buttonState = digitalRead(PIN_BUTTON);
+  int lecturaBoton = digitalRead(PIN_BOTON);
 
-  if (buttonState == LOW && lastButtonState == HIGH) {
+  if (lecturaBoton == LOW && ultimoEstadoBoton == HIGH) {
     estado++;
-    if (estado > 13) {
-      estado = 0;
-    }
+    if (estado > 13) estado = 0;
     delay(50); 
   }
-  lastButtonState = buttonState;
+  ultimoEstadoBoton = lecturaBoton;
 
   digitalWrite(PIN_LED1, LOW);
   digitalWrite(PIN_LED2, LOW);
