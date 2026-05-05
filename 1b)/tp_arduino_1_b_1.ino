@@ -1,47 +1,58 @@
+  #define cosito1 2
+  #define cosito2 3
+  #define cosito3 4
+  #define cosito4 5
+  #define cosito5 6
+  #define cosito6 7
+  #define cosito7 8
+  #define cosito8 9
+  #define cosito9 10
+  #define cosito10 11
+
 void setup()
 {
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(11, OUTPUT);
+  pinMode(cosito1, OUTPUT);
+  pinMode(cosito2, OUTPUT);
+  pinMode(cosito3, OUTPUT);
+  pinMode(cosito4, OUTPUT);
+  pinMode(cosito5, OUTPUT);
+  pinMode(cosito6, OUTPUT);
+  pinMode(cosito7, OUTPUT);
+  pinMode(cosito8, OUTPUT);
+  pinMode(cosito9, OUTPUT);
+  pinMode(cosito10, OUTPUT);
 }
 
 void loop()
 {
-  digitalWrite(6, true);
+  digitalWrite(cosito5, true);
   delay(500);
-  digitalWrite(6, false);
-  digitalWrite(5, true);
+  digitalWrite(cosito5, false);
+  digitalWrite(cosito4, true);
   delay(500); 
-  digitalWrite(5, false);
-  digitalWrite(4, true);
+  digitalWrite(cosito4, false);
+  digitalWrite(cosito3, true);
   delay(500); 
-  digitalWrite(4, false);
-  digitalWrite(3, true);
+  digitalWrite(cosito3, false);
+  digitalWrite(cosito2, true);
   delay(500); 
-  digitalWrite(3, false);
-  digitalWrite(2, true);
+  digitalWrite(cosito2, false);
+  digitalWrite(cosito1, true);
   delay(500); 
-  digitalWrite(2, false);
-  digitalWrite(7, true);
+  digitalWrite(cosito1, false);
+  digitalWrite(cosito6, true);
   delay(500);
-  digitalWrite(7, false);
-  digitalWrite(8, true);
+  digitalWrite(cosito6, false);
+  digitalWrite(cosito7, true);
   delay(500); 
-  digitalWrite(8, false);
-  digitalWrite(9, true);
+  digitalWrite(cosito7, false);
+  digitalWrite(cosito8, true);
   delay(500); 
-  digitalWrite(9, false);
-  digitalWrite(10, true);
+  digitalWrite(cosito8, false);
+  digitalWrite(cosito9, true);
   delay(500); 
-  digitalWrite(10, false);
-  digitalWrite(11, true);
+  digitalWrite(cosito9, false);
+  digitalWrite(cosito10, true);
   delay(500); 
-  digitalWrite(11, false);  
+  digitalWrite(cosito10, false);  
 }

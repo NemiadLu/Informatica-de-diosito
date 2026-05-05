@@ -1,22 +1,27 @@
+  #define cosito1 11
+  #define cosito2 10
+  #define cosito3 9
 void setup()
 {
-  pinMode(11 , OUTPUT);
-  pinMode(10 , OUTPUT);
-  pinMode(9 , OUTPUT);
+
+  pinMode(cosito1 , OUTPUT);
+  pinMode(cosito2 , OUTPUT);
+  pinMode(cosito3 , OUTPUT);
 }
 
 void loop()
 {
-  digitalWrite(11, true);
+
+  digitalWrite(cosito1, true);
   delay(3000); 
-  digitalWrite(10, true); 
+  digitalWrite(cosito2, true); 
   delay(1000);
-  digitalWrite(11, false);
-  digitalWrite(10 , false);
-  digitalWrite(9 , true);
+  digitalWrite(cosito1, false);
+  digitalWrite(cosito2 , false);
+  digitalWrite(cosito3 , true);
   delay(3000);
-  digitalWrite(9 , false);
-  digitalWrite(10 , true);
+  digitalWrite(cosito3 , false);
+  digitalWrite(cosito2 , true);
   delay(1000);
-  digitalWrite(10 , false);
+  digitalWrite(cosito2 , false);
 }  
